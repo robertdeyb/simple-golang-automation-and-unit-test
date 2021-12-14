@@ -2,10 +2,12 @@ Feature: Subtraction happens with addition
 
   Scenario:
     Given calculator is cleared
-    When i press 2
-    And i add 5
-    And i subtract 3
-    And i press 10
-    And i add 2
-    And i multiply by 2
-    Then the result should be 24
+    When i press "<press_num>"
+    And i add "<add_num>"
+    And i subtract "<sub_num>"
+    Then the result should be "<result_num>"
+
+    Examples: 
+      | press_num    | add_num         | sub_num          | result_num |
+      | 2            | 5               | 3                | 4          |
+      | 10           | 4               | 8                | 6          |
